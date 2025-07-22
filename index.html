@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    
+    <title>StaticVideo | Crea Videos Animados a partir de Imágenes</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Herramienta online gratuita para crear animaciones a partir de una imagen estática. Añade efectos de movimiento, zoom, formas y texto personalizado." />
+    <meta name="author" content="José Cisneros">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://Lstrappare.github.io/videostatic/" /> 
+
+    <meta property="og:title" content="StaticVideo | Crea Videos Animados a partir de Imágenes" />
+    <meta property="og:description" content="Herramienta online gratuita para crear animaciones a partir de una imagen estática." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://Lstrappare.github.io/videostatic/" />
+    <meta property="og:image" content="https://Lstrappare.github.io/videostatic/assets/Portada.webp" /> 
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <button id="theme-toggle" class="mb-4">Claro/Obscuro</button>
+
+    <div id="screen-blocker">
+        <div class="blocker-content">
+            <h1 class="main-title">StaticVideo</h1>
+            <p>Optimizado para pantallas más grandes</p>
+            <span>Por favor, gira tu dispositivo o usa una pantalla con un ancho mayor a 768px para usar la aplicación.</span>
+        </div>
+    </div>
+
+    <div id="app">
+        <h1 class="main-title">
+            StaticVideo
+        </h1>
+
+        <div id="drop-zone">
+            <p>Arrastra y suelta tu imagen aquí o haz clic para seleccionarla</p>
+            <input type="file" id="file-input" accept="image/*" hidden />
+        </div>
+
+        <div id="controls" class="hidden">
+            <div class="control-group">
+                <label for="shape">1. Elige una forma:</label>
+                <select id="shape">
+                    <option value="default">Rectángulo (Default)</option>
+                    <option value="square">Cuadrado</option>
+                    <option value="circle">Círculo</option>
+                    <option value="triangle">Triángulo</option>
+                </select>
+            </div>
+            <div id="spin-control-group" class="control-group hidden">
+                <label for="spin-checkbox">Girar (Spin)</label>
+                <input type="checkbox" id="spin-checkbox" />
+            </div>
+            <div class="control-group">
+                <label for="border-checkbox">Añadir borde</label>
+                <input type="checkbox" id="border-checkbox" checked />
+            </div>
+
+            <div class="control-group">
+                <label for="direction">2. Movimiento del fondo:</label>
+                <select id="direction">
+                    <option value="left-to-right">Izquierda a Derecha</option>
+                    <option value="right-to-left">Derecha a Izquierda</option>
+                    <option value="top-to-bottom">Arriba a Abajo</option>
+                    <option value="bottom-to-top">Abajo a Arriba</option>
+                    <option value="zoom-in">Acercamiento (Zoom In)</option>
+                    <option value="zoom-out">Alejamiento (Zoom Out)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="duration">Duración (segundos):</label>
+                <input type="number" id="duration" value="10" min="1" />
+            </div>
+
+            <div class="control-group">
+                <label for="custom-text">3. (Opcional) Escribe un texto:</label>
+                <input type="text" id="custom-text" placeholder="Texto personalizado..." />
+            </div>
+             <div class="control-group">
+                <label for="text-color-select">Color del texto:</label>
+                <select id="text-color-select">
+                    <option value="white">Blanco</option>
+                    <option value="black">Negro</option>
+                </select>
+            </div>
+
+            <p>4. Da "click" en la imagen para <b>iniciar</b> o <b>parar</b> la animación</p>
+            <div class="buttons-container">
+              <button id="fullscreen-btn">Ver en Pantalla Completa</button>
+            </div>
+          </div>
+          
+          <div id="preview-container" class="hidden">
+            <div id="background-image"></div>
+            <div id="foreground-wrapper">
+              <div id="foreground-image"></div>
+              <div id="custom-text-display"></div>
+            </div>
+          </div>
+          <footer>
+            <p>&copy; 2025 StaticVideo.  Publicado bajo la <a href="LICENSE" target="_blank">Licencia MIT</a>.</p>
+            <p>Desarrollado por <a href="https://josecisneros.me" target="_blank">José Cisneros</a></p>
+          </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
